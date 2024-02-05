@@ -12,6 +12,8 @@ let sum = 0;
 // inizializzo la variabile del prompt
 let numberUser;
 
+const outputElement = document.querySelector("#output");
+
 // ciclo finché la somma dei numeri inseriti è minore di 50
 while (sum < 50) {
 
@@ -35,4 +37,11 @@ while (sum < 50) {
 
 }
 
-console.log(numbers);
+// stampa array
+for (let i = 0; i < numbers.length; i++) {
+    outputElement.innerHTML += `${numbers[i]} <br>`;
+}
+
+if (numbers.length == 0) {
+    outputElement.innerText = "L'array è vuoto";
+}
