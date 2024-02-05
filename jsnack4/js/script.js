@@ -8,15 +8,19 @@ const outputElement = document.querySelector("#output");
 let numberUser;
 
 
-let counter = 0;
 
-// stampo 3 numeri
+// chiedo l'inserimento di numeri finché non viene inserito 0
 do {
-    numberUser = Number(prompt("Inserisci un numero intero"));
+    numberUser = Number(prompt("Inserisci un numero intero (inserisci 0 per terminare"));
 
     // controllo che l'utente abbia inserito un valore valido
     if (isNaN(numberUser) || !Number.isInteger(numberUser)) {
         alert("Il valore inserito non è valido")
+    }
+
+    // interrompo l'inserimento di numeri
+    else if (numberUser == 0) {
+        break;
     }
 
     else {
@@ -30,7 +34,6 @@ do {
         }
     }
 
-    counter++;
 
 }
-while (counter < 3);
+while (numberUser != 0);
